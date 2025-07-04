@@ -3,8 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 # GitHub Pagesにデプロイするための権限設定
 permissions:
@@ -28,6 +26,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Build site
+        run: |
+          # ファイルが存在することを確認
+          ls -la rainbow-todo-app/
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
