@@ -14,7 +14,7 @@
 ## 🌐 デモ
 
 GitHub Pagesでライブデモを確認できます：
-[https://YOUR_USERNAME.github.io/YOUR_REPOSITORY_NAME/](https://YOUR_USERNAME.github.io/YOUR_REPOSITORY_NAME/)
+[https://ryota-murakami-system-exe-jp.github.io/ryota-murakami-0702/](https://ryota-murakami-system-exe-jp.github.io/ryota-murakami-0702/)
 
 ## 🛠️ 技術スタック
 
@@ -49,10 +49,10 @@ GitHub Pagesでライブデモを確認できます：
 
 ```bash
 # プロジェクトをクローン
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
+git clone https://github.com/ryota-murakami-system-exe-jp/ryota-murakami-0702.git
 
 # プロジェクトディレクトリに移動
-cd YOUR_REPOSITORY_NAME
+cd ryota-murakami-0702
 
 # rainbow-todo-appディレクトリでローカルサーバーを起動
 cd rainbow-todo-app
