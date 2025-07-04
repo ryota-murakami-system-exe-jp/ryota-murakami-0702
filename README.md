@@ -16,6 +16,8 @@
 GitHub Pagesでライブデモを確認できます：
 [https://ryota-murakami-system-exe-jp.github.io/ryota-murakami-0702/](https://ryota-murakami-system-exe-jp.github.io/ryota-murakami-0702/)
 
+✅ **GitHub Pages設定完了** - GitHub Actionsによる自動デプロイが有効になりました！
+
 ## 🛠️ 技術スタック
 
 - HTML5
