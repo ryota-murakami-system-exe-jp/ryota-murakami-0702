@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, 
+        #ff6b6b 0%, 
+        #ffa500 14%, 
+        #ffff00 28%, 
+        #32cd32 42%, 
+        #00bfff 56%, 
+        #4169e1 70%, 
+        #8a2be2 84%, 
+        #ff1493 100%);
+    background-size: 400% 400%;
+    animation: rainbowGradient 8s ease infinite;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+@keyframes rainbowGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #ff6b6b, #ffa500, #ffff00, #32cd32, #00bfff, #4169e1, #8a2be2);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbowText 3s ease-in-out infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes rainbowText {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.todo-input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#todoInput {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #ff6b6b, #ffa500, #ffff00, #32cd32, #00bfff, #4169e1, #8a2be2) border-box;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#todoInput:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#addBtn {
+    padding: 15px 25px;
+    background: linear-gradient(45deg, #ff6b6b, #ffa500, #ffff00, #32cd32, #00bfff, #4169e1, #8a2be2);
+    background-size: 200% 200%;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: rainbowButton 4s ease infinite;
+}
+
+@keyframes rainbowButton {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+#addBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.todo-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(255, 165, 0, 0.1), rgba(255, 255, 0, 0.1), rgba(50, 205, 50, 0.1));
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.todo-stats span {
+    color: #333;
+}
+
+.todo-list-container {
+    margin-bottom: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#todoList {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, 
+        rgba(255, 107, 107, 0.1) 0%,
+        rgba(255, 165, 0, 0.1) 16.66%,
+        rgba(255, 255, 0, 0.1) 33.33%,
+        rgba(50, 205, 50, 0.1) 50%,
+        rgba(0, 191, 255, 0.1) 66.66%,
+        rgba(65, 105, 225, 0.1) 83.33%,
+        rgba(138, 43, 226, 0.1) 100%);
+    border-radius: 10px;
+    border-left: 4px solid;
+    border-image: linear-gradient(45deg, #ff6b6b, #ffa500, #ffff00, #32cd32, #00bfff, #4169e1, #8a2be2) 1;
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.todo-checkbox {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 1rem;
+    color: #333;
+}
+
+.todo-delete {
+    background: linear-gradient(45deg, #ff6b6b, #ff1493);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.todo-delete:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+}
+
+.clear-section {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.clear-section button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#clearCompleted {
+    background: linear-gradient(45deg, #32cd32, #00bfff);
+    color: white;
+}
+
+#clearAll {
+    background: linear-gradient(45deg, #ff6b6b, #ff1493);
+    color: white;
+}
+
+.clear-section button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* スクロールバーのスタイル */
+.todo-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.todo-list-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.todo-list-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff6b6b, #ffa500, #ffff00, #32cd32, #00bfff, #4169e1, #8a2be2);
+    border-radius: 10px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .todo-input-section {
+        flex-direction: column;
+    }
+    
+    .todo-stats {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .clear-section {
+        flex-direction: column;
+    }
+}
